@@ -1,0 +1,50 @@
+.usage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.usage-title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f2f2f2;
+}
+
+abbr{
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.usage-description, .conclusion-description{
+    color: #f2f2f2;
+    font-size: 16px;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+.usage-subtitle, .conclusion-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f2f2f2;
+}
+
+.description-numbered-list{
+    color: #f2f2f2;
+    font-size: 16px;
+    padding: 20px;
+    list-style: number;
+    text-decoration: none;
+}
+
+.description-list-item{
+    color: #f2f2f2;
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+}

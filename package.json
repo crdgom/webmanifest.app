@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "color": "^4.2.3",
+    "detect-libc": "^2.0.3",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "semver": "^7.6.2",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
