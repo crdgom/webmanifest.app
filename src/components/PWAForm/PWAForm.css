@@ -1,107 +1,178 @@
-.basics{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    max-width: 1300px;
+.basics {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 1300px;
 }
 
 form {
-    width: 90%;
+  width: 90%;
 }
 
-section.row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
+.col .container {
+  padding-top: 0px;
+}
+
+section.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1600px;
 }
 section.col {
-    width: 50%;
-    min-height: 630px;
+  width: 50%;
+  min-height: 630px;
 }
 
 .basics .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 20px;
 }
 
-.basics h2{
-    font-size: 1.5em;
-    color: #f2f2f2;
+.basics h2 {
+  font-size: 1.5em;
+  color: #f2f2f2;
 }
 
-.left{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    max-width: 1300px;
-    padding-right: 10px;
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+  max-width: 50%;
+  padding-right: 10px;
 }
 
-.right{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    max-width: 1300px;
-    padding-left: 10px;
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+  max-width: 50%;
+  padding-left: 10px;
 }
 
-label{
-    font-size: 1.2em;
-    margin-right: 10px;
-    color: #f2f2f2;
+.description {
+  width: 100%;
 }
 
-.left div, .right div{
-    margin-bottom: 20px;
+label {
+  font-size: 1.2em;
+  margin-right: 10px;
+  color: #f2f2f2;
 }
 
-.container.output{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-top: 20px;
-    background-color: #f2f2f2;
+.left div,
+.right div {
+  margin-bottom: 20px;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="date"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="checkbox"], input[type="radio"], input[type="file"], input[type="submit"], input[type="image"], input[type="reset"], input[type="button"], button, select, textarea{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid rgb(55, 65, 81);
-    border-radius: 6px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    color:rgb(209, 213, 219);
-    background-color: rgb(31, 41, 55);
+.container.output {
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 20px;
+  position: relative;
 }
-.color-input{
 
-    width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        overflow: hidden;
-        border: orange 2px solid;
-
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="file"],
+input[type="submit"],
+input[type="image"],
+input[type="reset"],
+input[type="button"],
+button,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(55, 65, 81);
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  color: rgb(209, 213, 219);
+  background-color: rgb(31, 41, 55);
 }
-input[type="color"] { scale: 3 }
+.color-input {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: orange 2px solid;
+}
+input[type="color"] {
+  scale: 3;
+}
+
+.code-container {
+  background-color: rgb(17, 24, 39);
+  padding: 50px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.copy-code {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 20px;
+  cursor: pointer;
+  background-image: url(../../assets/copy.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1);
+}
+
+.copy-code:hover {
+  filter: invert(0.5);
+}
+
+.submit {
+  background-color: rgb(37, 8, 51);
+}
+
+.submit:hover {
+  background-color: rgb(17, 24, 39);
+}

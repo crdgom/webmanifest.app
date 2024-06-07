@@ -7,6 +7,7 @@ import { useState } from "react";
 import useForm from "../../hooks/useForm/useForm";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import { CopyCode } from '../CopyCode/CopyCode';
 import "./PWAForm.css";
 
 const PWAForm = () => {
@@ -73,7 +74,7 @@ const PWAForm = () => {
     name: "",
     short_name: "",
     description: "",
-    start_url: "",
+    start_url: "/",
     display: "",
     display_override: "",
     background_color: "",
@@ -87,7 +88,7 @@ const PWAForm = () => {
     prefer_related_applications: false,
     protocol_handlers: "",
     related_applications: "",
-    scope: "",
+    scope: "/",
     screenshots: "",
     share_target: "",
     shortcuts: "",
@@ -95,7 +96,8 @@ const PWAForm = () => {
 
   return (
     <>
-      <section className="row">
+    <section className="container">
+    <section className="row">
         <section className="col">
           <section className="container">
             <form onSubmit={handleSubmit}>
@@ -111,17 +113,7 @@ const PWAForm = () => {
                         name="name"
                         value={input.name}
                         onChange={handleInputChange}
-                        placeholder="My PWA App"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="description">Description:</label>
-                      <input
-                        type="text"
-                        id="description"
-                        name="description"
-                        value={input.description}
-                        onChange={handleInputChange}
+                        placeholder="My Awesome PWA App"
                       />
                     </div>
                     <div>
@@ -130,6 +122,7 @@ const PWAForm = () => {
                         name="display"
                         id="display"
                         onChange={handleInputChange}
+                        defaultValue="standalone"
                       >
                         <option value="fullscreen">Fullscreen</option>
                         <option value="standalone">Standalone</option>
@@ -166,6 +159,7 @@ const PWAForm = () => {
                         name="short_name"
                         value={input.short_name}
                         onChange={handleInputChange}
+                        placeholder="MAPWA APP"
                       />
                     </div>
                     <div>
@@ -176,6 +170,7 @@ const PWAForm = () => {
                         name="start_url"
                         value={input.start_url}
                         onChange={handleInputChange}
+                        placeholder="/"
                       />
                     </div>
                     <div>
@@ -193,6 +188,17 @@ const PWAForm = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="description">
+                      <label htmlFor="description">Description:</label>
+                      <input
+                        type="text"
+                        id="description"
+                        name="description"
+                        value={input.description}
+                        onChange={handleInputChange}
+                        placeholder="My Awesome PWA App short Description"
+                      />
+                    </div>
                 </div>
               </section>
               <div>
@@ -256,8 +262,23 @@ const PWAForm = () => {
               </div>
               <div>
                 <label htmlFor="orientation">Orientation:</label>
+                <select
+                        name="orientation"
+                        id="orientation"
+                        onChange={handleInputChange}
+                        defaultValue="portrait"
+                      >
+                        <option value="any">Any</option>
+                        <option value="natural">Natural</option>
+                        <option value="landscape">Landscape</option>
+                        <option value="landscape-primary">Landscape Primary</option>
+                        <option value="landscape-secondary">Landscape Secondary</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="portrait-primary">Landscape Primary</option>
+                        <option value="landscape-primary">Landscape Primary</option>
+                      </select>
                 <input
-                  type="text"
+                  type="hidden"
                   id="orientation"
                   name="orientation"
                   value={input.orientation}
@@ -342,7 +363,7 @@ const PWAForm = () => {
                   onChange={handleInputChange}
                 />
               </div>
-              <button type="submit" id="submit">
+              <button type="submit" id="submit" className="submit">
                 Generate JSON
               </button>
             </form>
@@ -351,17 +372,19 @@ const PWAForm = () => {
         <section className="col">
           <section className="container output">
             <h2 className="output-title">Output</h2>
-            <button className="copy-code">
-              <i></i>
+            <button className="copy-code" onClick={CopyCode}>
             </button>
-            <div>
+            <div className="code-container">
               <code>
-                <pre>{JSON.stringify(input, null, 2)}</pre>
+                <pre id="output">{JSON.stringify(input, null, 2)}</pre>
               </code>
             </div>
           </section>
         </section>
       </section>
+
+    </section>
+      
     </>
   );
 };
